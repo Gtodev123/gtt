@@ -42,7 +42,8 @@ const StyledNav = styled.nav`
     font-family: 'Lobster' , cursive;
     font-weight:lighter;
     border:solid 1px white;
-    padding:0.4rem
+    padding:0.4rem;
+    border-radius:10px;
   } 
   li {
     padding-left:10rem;
