@@ -1,36 +1,42 @@
-import home1 from '../img/home1.png'
-import {motion} from 'framer-motion'
-//styles from styles.js using styled
-import { About, Description , Image , Hide } from '../styles'
+import React from "react";
+import home1 from "../img/home1.png";
+import { About, Description, Image, Hide } from "../styles";
+//Framer Motion
+import { motion } from "framer-motion";
+import { titleAnim, fade, photoAnim } from "../animation";
+import Wave from "./Wave";
 
+const AboutSection = () => {
+  return (
+    <About>
+      <Description>
+        <motion.div>
+          <Hide>
+            <motion.h2 variants={titleAnim}>We work to make</motion.h2>
+          </Hide>
+          <Hide>
+            <motion.h2 variants={titleAnim}>
+              your <span>dreams</span> come
+            </motion.h2>
+          </Hide>
+          <Hide>
+            <motion.h2 variants={titleAnim}>true.</motion.h2>
+          </Hide>
+        </motion.div>
+        <motion.p variants={fade}>
+          Contact us for any photography or videography ideas that you have. We
+          have professionals with amazing skills.
+        </motion.p>
+        <motion.button variants={fade}>Contact Us</motion.button>
+      </Description>
+      <Image>
+        <motion.img variants={photoAnim} src={home1} alt="guy with a camera" />
+      </Image>
+      <Wave />
+    </About>
+  );
+};
 
-const AboutSection =() => {
-    return(
-        <About>
-            <Description>
-                <div className="title">
-                    <Hide>
-                         <motion.h2 animate={{opacity:1,transition:{ duration:2}}} initial={{opacity:0}}>We work to make</motion.h2>
-                    </Hide>
-                    <Hide>
-                        <h2>your <span>dream</span> come</h2>
-                    </Hide>
-                    <Hide>
-                        <h2>true.</h2>
-                    </Hide>
-                </div>
-                <p>Contact us for any photograpy or videography ideas. We have a professionals to build ur dreams.!</p>
-                <button>Contact us</button>
-            </Description>
-            <Image> 
-            <img src={home1} alt="home1.png" />
-            </Image>
-            </About>
-    )
-}
-
-
-
-
+//Styled Components
 
 export default AboutSection;
